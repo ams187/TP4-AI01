@@ -11,7 +11,7 @@
 #include <string.h>
 #include <ctype.h>
 
-/* --- A. Structures de données (Source: 9-27) --- */
+/* --- Structures de données --- */
 
 // Structure représentant une position unique d'un mot
 typedef struct Position {
@@ -37,30 +37,30 @@ typedef struct Index {
     int nbMotsTotal;
 } T_Index;
 
-/* --- B. Prototypes des fonctions --- */
+/* --- Prototypes des fonctions --- */
 
-// 1. Gestion des positions
+// Gestion des positions
 T_Position* ajouterPosition(T_Position* listeP, int ligne, int ordre, int phrase);
 
-// 2. Gestion de l'ABR (Ajout)
+// Gestion de l'ABR
 int ajouterOccurence(T_Index* index, char* mot, int ligne, int ordre, int phrase);
 
-// 3. Indexation du fichier
+// Indexation du fichier
 int indexerFichier(T_Index* index, char* filename);
 
-// 4. Affichage de l'index (Parcours infixe)
+// Affichage de l'index
 void afficherIndex(T_Index index);
 
-// 5. Recherche
+// Recherche
 T_Noeud* rechercherMot(T_Index index, char* mot);
 
-// 6. Affichage des phrases contenant un mot (Optimisé)
+// Affichage des occurrences d'un mot (OPTIMISÉ)
 void afficherOccurencesMot(T_Index index, char* mot);
 
-// 7. Reconstruction du texte (Optimisé)
+// Reconstruction du texte
 void construireTexte(T_Index index, char* filename);
 
-// Utilitaires de gestion mémoire
+// Gestion mémoire
 void libererIndex(T_Index* index);
 
 #endif
